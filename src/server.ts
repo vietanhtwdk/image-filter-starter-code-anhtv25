@@ -34,7 +34,6 @@ import { filterImageFromURL, deleteLocalFiles } from './util/util';
 
   app.get('/filteredimage', async (req, res) => {
     try {
-      console.log(req.query.image_url);
       let filteredpath = await filterImageFromURL(req.query.image_url);
       res.status(200).sendFile(filteredpath);
       await timeout(1000);
